@@ -51,15 +51,24 @@ createApp({
         clicked(index) {
             this.activeImage = index;
         },
-        autoplay() {
+        changeCounter() {
             this.activeImage++;
             if (this.activeImage === 5) {
                 this.activeImage = 0;
             }
+            console.log(this.activeImage);
+        },
+        intervalAutoplay() {
+            console.log('autoplay started');
+            this.intervalAutoplay = setInterval(this.changeCounter, 3000);
+        },
+        stopInterval() {
+            console.log('autoplay stopped');
+            clearInterval(this.intervalAutoplay);
         }
     },
     mounted() {
-        setInterval(this.autoplay, 3000);
+        this.intervalAutoplay();
     } 
     
     // setInterval(function() {
