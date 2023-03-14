@@ -50,6 +50,22 @@ createApp({
         },
         clicked(index) {
             this.activeImage = index;
+        },
+        autoplay() {
+            this.activeImage++;
+            if (this.activeImage === 5) {
+                this.activeImage = 0;
+            }
         }
-    }
+    },
+    mounted() {
+        setInterval(this.autoplay, 3000);
+    } 
+    
+    // setInterval(function() {
+    //     this.activeImage++;
+    //     if (this.activeImage === 5) {
+    //         this.activeImage = 0;
+    //     }
+    // })
 }).mount('#app');

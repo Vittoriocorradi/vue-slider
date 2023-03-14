@@ -9,3 +9,8 @@ Bonus 1
 
 Aggiungo un click ai contenitori dei thumbnail e mi salvo l'indice.
 Al click su un contenitore di una thumbnail, il suo indice verrà assesegnato alla variabile di stato.
+
+Bonus 2
+
+Aggiungo una funzione per cui la variabile di stato deve incrementare fino al numero di slides. A quel punto deve ripartire da zero.
+Richiamo questa funzione con un intervallo di tre secondi.
