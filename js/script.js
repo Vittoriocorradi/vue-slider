@@ -47,6 +47,9 @@ createApp({
             } else {
                 this.activeImage = 0;
             }
+        },
+        clicked(index) {
+            this.activeImage = index;
         }
     }
 }).mount('#app');
