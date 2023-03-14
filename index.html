@@ -6,16 +6,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Slider</title>
+    <!-- Style -->
     <link rel="stylesheet" href="./css/style.css" />
 </head>
 
 <body>
 
+    <!-- Contenitore VueJS -->
     <div id="app">
 
         <div class="container">
              <div class="slider-wrapper" tabindex="0" @mouseover="stopInterval()" @mouseout="startInterval()">
 
+                <!-- Card principale -->
                 <div class="item">
                     <img :src="slides[activeImage].image" alt="Spiderman" />
                     <div class="text">
@@ -26,9 +29,12 @@
                     </div>
                 </div>
 
+                <!-- Thumbnails -->
                 <div class="thumbs">
+                    <!-- Bottoni -->
                     <div class="prev" @click="prev()"></div>
                     <div class="next" @click="next()"></div>
+                    <!-- Singole thumbnail -->
                     <div v-for="(slide, index) in slides" class="thumb" :class="{active: index === activeImage}" @click="clicked(index, $event)">
                         <img :src="slides[index].image" :alt="slides[index].title">
                     </div>
@@ -39,6 +45,7 @@
 
     </div>
 
+    <!-- VueJS e mio JS -->
     <script src='https://unpkg.com/vue@3/dist/vue.global.js'></script>
     <script src="./js/script.js"></script>
 </body>

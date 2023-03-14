@@ -1,10 +1,12 @@
 const { createApp} = Vue;
 
 createApp({
+    // DATI
     data() {
         return {
+            // Variabile di stato
             activeImage: 0,
-            intervalId: null,
+            // Lista giochi
             slides: [
                 {
                     image: 'img/01.webp',
@@ -34,7 +36,9 @@ createApp({
             ]
         }
     },
+    // FUNZIONI
     methods: {
+        // Tasto previous
         prev() {
             if (this.activeImage > 0) {
                 this.activeImage--;
@@ -42,6 +46,7 @@ createApp({
                 this.activeImage = this.slides.length - 1;
             }
         },
+        // Tasto next
         next() {
             if (this.activeImage < this.slides.length - 1) {
                 this.activeImage++;
@@ -49,9 +54,11 @@ createApp({
                 this.activeImage = 0;
             }
         },
+        // Highlight il gioco selezionato
         clicked(index) {
             this.activeImage = index;
         },
+        // Counter per l'intervallo
         changeCounter() {
             this.activeImage++;
             if (this.activeImage === 5) {
@@ -59,16 +66,19 @@ createApp({
             }
             console.log(this.activeImage);
         },
+        // Inizia l'intervallo
         startInterval() {
             console.log('autoplay started')
             this.intervalId = setInterval(this.changeCounter, 3000)
         },
+        // Ferma l'intervallo
         stopInterval() {
             console.log('autoplay stopped');
             clearInterval(this.intervalId);
         }
         
     },
+    // INIZIO INTERVALLO AL MOUNT
     mounted() {
         this.startInterval();
     } 
