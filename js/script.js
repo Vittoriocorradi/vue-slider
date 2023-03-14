@@ -3,7 +3,7 @@ const { createApp} = Vue;
 createApp({
     data() {
         return {
-            activeImage: 0,
+            activeImage: 1,
             slides: [
                 {
                     image: 'img/01.webp',
